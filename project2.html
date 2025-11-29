@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Spider Robot - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'gg sans';
+            src: local('Helvetica Neue'), local('Arial');
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <label class="theme-toggle">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <span class="theme-slider"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+            <h1 class="project-detail-title">Autonomous Spider Robot</h1>
+            <p class="project-detail-category">Robotics & Embedded Systems</p>
+
+            <div class="project-detail-content">
+                
+                <div class="project-detail-image">
+                    <!-- Main project image: replace the src with your main project photo path -->
+                    <div class="image-placeholder">
+                        <img src="assets\20251125_214103(1).jpg" alt="Spider Robot Prototype - main" class="project-detail-main-img zoomable" style="max-width:100%; height:auto; display:block;">
+                        <p style="font-size: .9rem; color: var(--text-secondary); margin-top: 0.75rem;"></p>
+                    </div>
+                </div>
+
+                <div class="project-detail-info">
+                    <h2>Overview</h2>
+                    <p>
+                        A six-leg autonomous robot engineered for coordinated gait control, stable locomotion,
+                        and adaptive behavior. The project focused on mechanical design, servo synchronization, and
+                        responsive movement algorithms.
+                    </p>
+
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Six-leg servo-driven gait system</li>
+                        <li>Custom lightweight chassis</li>
+                        <li>Obstacle detection sensors</li>
+                        <li>Multiple motion modes (walk, rotate, idle)</li>
+                        <li>Real-time movement controller</li>
+                        <li>Modular expandability</li>
+                    </ul>
+
+                    <h2>Technologies Used</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">Arduino</span>
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Ultrasonic Sensors</span>
+                        <span class="tech-tag">Servo Control Algorithms</span>
+                    </div>
+
+                    <h2>Project Details</h2>
+                    <p>
+                        The spider robot was developed to explore multi-leg gait mechanics and autonomous behavior. 
+                        Each leg was calibrated for synchronized movement, requiring extensive tuning and servo mapping.
+                        The final system supports dynamic motion, obstacle reaction, and programmed walking sequences.
+                    </p>
+
+                    <div class="project-detail-images">
+                        <div class="detail-image-placeholder">
+                            <img src="assets/Screenshot 2025-11-26 180513.png" alt="Chassis Design" class="zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        </div>
+                        <div class="detail-image-placeholder">
+                            <img src="assets/project2-servos.jpg" alt="Servo Layout" class="zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;">Servo Layout — replace `assets/project2-servos.jpg`</p>
+                        </div>
+                        <div class="detail-image-placeholder">
+                            <img src="assets/project2-gait.jpg" alt="Gait Diagram" class="zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;">Gait Diagram — replace `assets/project2-gait.jpg`</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Samarth Aradhya</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

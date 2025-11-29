@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Samarth Aradhya</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'gg sans';
+            src: local('Helvetica Neue'), local('Arial');
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px 40px;
+            background: var(--bg-primary);
+            min-height: calc(100vh - 48px);
+            margin-top: 48px;
+        }
+
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .resume-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 8px 16px;
+            background: var(--primary-blurple);
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-blurple-hover);
+        }
+
+        .action-btn.secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .action-btn.secondary:hover {
+            background: var(--bg-modifier-hover);
+            border-color: var(--primary-blurple);
+        }
+
+        [data-theme="light"] .action-btn {
+            background: var(--primary-blurple-dark);
+            color: var(--text-primary);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 4px;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+            padding: 4px;
+        }
+
+        .view-btn {
+            padding: 6px 12px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .view-btn.active {
+            background: var(--primary-blurple);
+            color: #ffffff;
+        }
+
+        [data-theme="light"] .view-btn.active {
+            background: var(--primary-blurple-dark);
+            color: var(--text-primary);
+        }
+
+        .resume-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .latex-source {
+            display: none;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 16px;
+            overflow-x: auto;
+        }
+
+        .latex-source.active {
+            display: block;
+        }
+
+        .latex-source pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: var(--text-primary);
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 1.4;
+        }
+
+        /* Resume Styling */
+        .resume-rendered {
+            font-family: 'Times New Roman', serif;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .resume-rendered h1 {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 4px;
+            color: var(--text-primary);
+            letter-spacing: 0.05em;
+        }
+
+        .resume-rendered .contact-info {
+            text-align: center;
+            font-size: 13px;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .resume-rendered .contact-info a {
+            color: var(--text-link);
+            text-decoration: none;
+        }
+
+        .resume-rendered .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .resume-rendered h2 {
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 1px solid var(--border-color);
+            margin-top: 16px;
+            margin-bottom: 8px;
+            padding-bottom: 2px;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .resume-rendered h3 {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 8px;
+            margin-bottom: 2px;
+            color: var(--text-primary);
+        }
+
+        .resume-rendered .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .resume-rendered .job-title {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .resume-rendered .job-location {
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .resume-rendered .job-date {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .resume-rendered ul {
+            margin: 6px 0;
+            padding-left: 20px;
+        }
+
+        .resume-rendered li {
+            margin-bottom: 4px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .resume-rendered .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-top: 8px;
+            margin-bottom: 2px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .resume-rendered .project-title {
+            font-weight: bold;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .resume-rendered .project-tech {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .resume-rendered .project-date {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .resume-rendered .skills-section {
+            margin-top: 8px;
+        }
+
+        .resume-rendered .skill-category {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .resume-rendered .skill-category strong {
+            color: var(--text-primary);
+        }
+
+        .resume-rendered .skill-category span {
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 80px 16px 40px;
+            }
+
+            .resume-content {
+                padding: 24px;
+            }
+
+            .resume-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .resume-title {
+                font-size: 28px;
+            }
+
+            .resume-rendered h1 {
+                font-size: 24px;
+            }
+
+            .job-header, .project-header {
+                flex-direction: column;
+                align-items: flex-start !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="site-name">Portfolio</span>
+                <a href="https://www.purdue.edu" class="edu-badge" target="_blank" rel="noopener noreferrer" aria-label="Purdue University">
+                    <span class="edu-logo" aria-hidden="true">P</span>
+                    <span class="edu-text">Purdue University</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="resume.html" class="nav-link active">Resume</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <label class="theme-toggle">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <span class="theme-slider"></span>
+                </label>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Resume Content -->
+    <div class="resume-container">
+        <div class="resume-header">
+            <h1 class="resume-title">Resume</h1>
+            <div class="resume-actions">
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="rendered">Formatted</button>
+                    <button class="view-btn" data-view="latex">LaTeX Source</button>
+                </div>
+                <button class="action-btn" id="downloadPdf">Download PDF</button>
+                <button class="action-btn secondary" id="downloadTex">Download .tex</button>
+            </div>
+        </div>
+
+        <!-- Rendered Resume View -->
+        <div class="resume-content resume-rendered" id="renderedView">
+            <h1>SAMARTH ARADHYA</h1>
+            <div class="contact-info">
+                <a href="https://linkedin.com/in/samarth-aradhya" target="_blank">linkedin.com/in/samarth-aradhya</a>
+            </div>
+
+            <h2>Education</h2>
+            <div class="job-header">
+                <div>
+                    <h3>Purdue University</h3>
+                    <p class="job-title">Bachelor of Science in Cybersecurity, Planned double major in Mechanical Engineering</p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="job-location">West Lafayette, IN</span><br>
+                    <span class="job-date">Aug. 2025 - May 2029</span>
+                </div>
+            </div>
+
+            <h2>Experience</h2>
+            
+            <div class="job-header">
+                <div>
+                    <h3>Code Ninjas Tutor</h3>
+                    <p class="job-title">San Ramon Code Ninjas</p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="job-location">San Ramon, CA</span><br>
+                    <span class="job-date">May 2022 - March 2025</span>
+                </div>
+            </div>
+            <ul>
+                <li>Taught students foundational programming in JavaScript, Python, and Robotics, guiding students through debugging and project development.</li>
+                <li>Initiated and led the development of a new 3D Printing and Modeling Camp introducing students to CAD software and physical development of their ideas</li>
+            </ul>
+
+            <div class="job-header">
+                <div>
+                    <h3>Head Designer</h3>
+                    <p class="job-title">California High School Robotics Club</p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="job-location">San Ramon, CA</span><br>
+                    <span class="job-date">Sep. 2022 - Mar. 2024</span>
+                </div>
+            </div>
+            <ul>
+                <li>Served as head structural designer for my team</li>
+                <li>Worked with a team of four members in designing and building competition robots</li>
+            </ul>
+
+            <div class="job-header">
+                <div>
+                    <h3>Eagle Scout</h3>
+                    <p class="job-title">Scouts of America, Boy Scouts Troop 84</p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="job-location">San Ramon, CA</span><br>
+                    <span class="job-date">March 2019 - Present</span>
+                </div>
+            </div>
+            <ul>
+                <li>Completed 100+ hours of community service through conservation projects, food, and toy drives</li>
+                <li>Led and coordinated teams of younger and older scouts during outdoor projects and expeditions emphasizing safety, planning, preparedness and success</li>
+                <li>Planned multi-stage troop events and logistics such as equipment and routes during changing times such as the COVID lockdown</li>
+            </ul>
+
+            <h2>Projects</h2>
+            
+            <div class="project-header">
+                <div>
+                    <span class="project-title">Finger Tracking Glove</span>
+                    <span class="project-tech"> | Embedded Systems, Sensors, Human - Machine Interface</span>
+                </div>
+                <span class="project-date">September 2025 - Present</span>
+            </div>
+            <ul>
+                <li>Developed a wearable glove that tracks finger flexion using calibrated flex sensors and streams data real time using an ESP32 micro controller</li>
+                <li>Designed a digital 3D model that accurately shows hand position based on information from glove.</li>
+                <li>Working on integration with a robotic hand for remote manipulation</li>
+            </ul>
+
+            <div class="project-header">
+                <div>
+                    <span class="project-title">ESP32 Wi-Fi Robotic Spider</span>
+                    <span class="project-tech"> | Computer Vision, Wireless Control</span>
+                </div>
+                <span class="project-date">October 2024 - December 2024</span>
+            </div>
+            <ul>
+                <li>Built a mobile robotic platform with real time video streaming using an ESP32-CAM chip</li>
+                <li>Implemented a real-time control system built on a Web Application</li>
+                <li>Worked with low level debugging and multi-system synchronization for field robotics applications</li>
+            </ul>
+
+            <div class="project-header">
+                <div>
+                    <span class="project-title">Game Development</span>
+                </div>
+                <span class="project-date">March 2019 - Present</span>
+            </div>
+            <ul>
+                <li>Designed and programmed over 10 game prototypes exploring diverse mechanics and systems architecture.</li>
+                <li>Developed projects using C#, JavaScript, and have attempted custom-built engines to integrate physics, AI behavior, and user interaction.</li>
+                <li>Incorporated real-time security validation and memory monitoring to prevent memory scanning and process injection.</li>
+            </ul>
+
+            <h2>Technical Skills</h2>
+            <div class="skills-section">
+                <div class="skill-category">
+                    <strong>Languages:</strong> <span>Python, Java, JavaScript, C++, HTML</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Software/Tools:</strong> <span>Unix, Windows, CAD, Unity, Godot, Arduino, Raspberry Pi, 3D Slicers, Firebase</span>
+                </div>
+                <div class="skill-category">
+                    <strong>Other:</strong> <span>Strong teamwork and collaboration skills, robotics design and programming, tutoring and mentoring, problem-solving through project-based learning</span>
+                </div>
+            </div>
+
+            <h2>Activities</h2>
+            <div class="job-header">
+                <div>
+                    <h3>Purdue University</h3>
+                    <p class="job-title">Formula Baja, Purdue Badminton Club</p>
+                </div>
+                <div style="text-align: right;">
+                    <span class="job-location">West Lafayette, IN</span><br>
+                    <span class="job-date">Fall 2025 - Present</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- LaTeX Source View -->
+        <div class="latex-source" id="latexView">
+            <pre id="latexContent"></pre>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Samarth Aradhya</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // LaTeX source content
+        const latexSource = String.raw`%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Samarth Aradhya} \\ \vspace{1pt}
+    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/samarth-aradhya}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Purdue University}{West Lafayette, IN}
+      {Bachelor of Science in Cybersecurity, Planned double major in Mechanical Engineering}{Aug. 2025 -- May 2029}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+    \\resumeSubHeadingListStart
+
+        \\resumeSubheading
+            {Code Ninjas Tutor}{May 2022 -- March 2025}
+            {San Ramon Code Ninjas}{San Ramon, CA}
+            \\resumeItemListStart
+                \\resumeItem{Taught students foundational programming in JavaScript, Python, and Robotics, guiding students through debugging and project development.}
+                \\resumeItem{Initiated and led the development of a new 3D Printing and Modeling Camp introducing students to CAD software and physical development of their ideas.}
+                \\resumeItem{(Recruiter joke) If you're a recruiter reading this — feel free to help me add more experience 😉}
+            \\resumeItemListEnd
+
+    \\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Finger Tracking Glove} $|$ \emph{Embedded Systems, Sensors, Human - Machine Interface}}{September 2025  -- Present}
+          \resumeItemListStart
+            \resumeItem{Developed a wearable glove that tracks finger flexion using calibrated flex sensors and streams data real time using an ESP32 micro controller}
+            \resumeItem{Designed a digital 3D model that accurately shows hand position based on information from glove.}  
+            \resumeItem{Working on integration with a robotic hand for remote manipulation}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{ESP32 Wi-Fi Robotic Spider} $|$ \emph{Computer Vision, Wireless Control}}{October 2024 -- December 2024}
+          \resumeItemListStart
+            \resumeItem{Built a mobile robotic platform with real time video streaming suing an ESP32-CAM chip }
+            \resumeItem{Implemented a real-time control system built on a Web Application}
+            \resumeItem{Worked with low level debugging and multi-system synchronization for field robotics applications}
+          \resumeItemListEnd
+      \resumeProjectHeading{\textbf{Game Development}}{March 2019 -- Present}
+      \resumeItemListStart
+        \resumeItem{Designed and programmed over 10 game prototypes exploring diverse mechanics and systems architecture.}
+        \resumeItem{Developed projects using C\#, JavaScript, and have attempted custom-built engines to integrate physics, AI behavior, and user interaction.}
+        \resumeItem{Incorporated real-time security validation and memory monitoring to prevent memory scanning and process injection.}
+
+          \resumeItemListEnd          
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, JavaScript, C++, HTML} \\
+     \textbf{Software/Tools}{: Unix, Windows, CAD, Unity, Godot, Arduino, Raspberry Pi, 3D Slicers, Firebase} \\
+     \textbf{Other}{: Strong teamwork and collaboration skills, robotics design and programming, tutoring and mentoring, problem-solving through project-based learning}
+    }}
+\end{itemize}
+
+\section{Activities}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Purdue University}{West Lafayette, IN}
+      {Formula Baja, Purdue Badminton Club}{Fall 2025 -- Present}
+  \resumeSubHeadingListEnd
+%-------------------------------------------
+\end{document}`;
+
+        // Display LaTeX source
+        document.getElementById('latexContent').textContent = latexSource;
+
+        // View toggle functionality
+        const viewBtns = document.querySelectorAll('.view-btn');
+        const renderedView = document.getElementById('renderedView');
+        const latexView = document.getElementById('latexView');
+
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const view = btn.dataset.view;
+                
+                viewBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                if (view === 'rendered') {
+                    renderedView.style.display = 'block';
+                    latexView.classList.remove('active');
+                } else {
+                    renderedView.style.display = 'none';
+                    latexView.classList.add('active');
+                }
+            });
+        });
+
+        // Download PDF functionality - checks if PDF exists, otherwise provides instructions
+        document.getElementById('downloadPdf').addEventListener('click', () => {
+            // Try to download the PDF if it exists
+            fetch('Samarth_Aradhya_Resume.pdf', { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        // PDF exists, download it
+                        const a = document.createElement('a');
+                        a.href = 'Samarth_Aradhya_Resume.pdf';
+                        a.download = 'Samarth_Aradhya_Resume.pdf';
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                    } else {
+                        throw new Error('PDF not found');
+                    }
+                })
+                .catch(() => {
+                    // PDF doesn't exist yet, show instructions
+                    alert('PDF not yet uploaded!\n\nTo get the PDF with exact LaTeX formatting:\n\n1. Click "Download .tex" below\n2. Go to Overleaf.com (free)\n3. Upload the .tex file\n4. Click "Recompile"\n5. Download the PDF\n\nOR:\n\nCompile locally with: pdflatex resume.tex\n\nThen add the compiled "resume.pdf" file to your website folder.');
+                });
+        });
+
+        // Download .tex file
+        document.getElementById('downloadTex').addEventListener('click', () => {
+            const blob = new Blob([latexSource], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Samarth_Aradhya_Resume.tex';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html> 

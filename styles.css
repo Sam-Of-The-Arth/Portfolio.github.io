@@ -1,0 +1,1118 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Primary Colors - Slightly Modified Blurple (Dark Mode) */
+    --primary-blurple: #5B6AE8;
+    --primary-blurple-dark: #4A58D6;
+    --primary-blurple-hover: #4A58D6;
+    --discord-green: #57F287;
+    --discord-yellow: #FEE75C;
+    --discord-red: #ED4245;
+    --discord-fuchsia: #EB459E;
+    
+    /* Background Colors - Dark Mode (Grayish, not black) */
+    --bg-primary: #000000;
+    --bg-secondary: #000000;
+    --bg-tertiary: #000000;
+    --bg-hover: #40444b;
+    --bg-active: #393c43;
+    --bg-input: #40444b;
+    --bg-elevated: #2f3136;
+    --bg-modifier-hover: rgba(79, 84, 92, 0.16);
+    --bg-modifier-active: rgba(79, 84, 92, 0.24);
+    
+    /* Text Colors - Dark Mode */
+    --text-primary: #dcddde;
+    --text-secondary: #b9bbbe;
+    --text-muted: #72767d;
+    --text-link: #00a8fc;
+    --text-heading: #ffffff;
+    
+    /* Border Colors - Dark Mode */
+    --border-color: #40444b;
+    --border-light: #4f545c;
+    --border-dark: #2f3136;
+    
+    /* Scrollbar Colors - Dark Mode */
+    --scrollbar-thumb: #2a2d32;
+    --scrollbar-track: #2f3136;
+    
+    /* Other */
+    --shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 16px 0 rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="light"] {
+    /* Light Mode Colors */
+    --primary-blurple: #E0E3FF;
+    --primary-blurple-dark: #C5CAFF;
+    --primary-blurple-hover: #C5CAFF;
+    
+    /* Background Colors - Light Mode (Light grayish) */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f2f3f5;
+    --bg-tertiary: #e3e5e8;
+    --bg-hover: #e9e9ea;
+    --bg-active: #f2f3f5;
+    --bg-input: #e9e9ea;
+    --bg-elevated: #f2f3f5;
+    --bg-modifier-hover: rgba(79, 84, 92, 0.08);
+    --bg-modifier-active: rgba(79, 84, 92, 0.16);
+    
+    /* Text Colors - Light Mode */
+    --text-primary: #2e3338;
+    --text-secondary: #4f5660;
+    --text-muted: #747f8d;
+    --text-link: #0066cc;
+    --text-heading: #060607;
+    
+    /* Border Colors - Light Mode */
+    --border-color: #e3e5e8;
+    --border-light: #d1d9de;
+    --border-dark: #c7ccd1;
+    
+    /* Scrollbar Colors - Light Mode */
+    --scrollbar-thumb: #c7ccd1;
+    --scrollbar-track: #f2f3f5;
+    
+    /* Other */
+    --shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px 0 rgba(0, 0, 0, 0.15);
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--bg-primary);
+}
+
+body {
+    font-family: 'Nunito', 'gg sans', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
+    line-height: 1.2;
+    overflow-x: hidden;
+    background: var(--bg-primary);
+    font-size: 18px;
+    position: relative;
+}
+
+/* Theme transition removed */
+body::before {
+    display: none;
+}
+
+body.theme-transitioning::before {
+    display: none;
+}
+
+/* Discord-style scrollbar */
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 7px;
+    border: 3px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bg-hover);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation - Discord Style */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-dark);
+    z-index: 1000;
+    height: 48px;
+    box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05), 0 2px 0 rgba(4, 4, 5, 0.05);
+}
+
+.nav-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.1;
+}
+
+/* Education badge (small, subtle) */
+.edu-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 8px;
+    text-decoration: none;
+    color: var(--text-secondary);
+    opacity: 0.9;
+}
+
+.edu-badge:hover {
+    color: var(--text-primary);
+}
+
+.edu-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    background: var(--primary-blurple);
+    color: white;
+    line-height: 1;
+}
+
+/* Image logo styling */
+.edu-logo-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.edu-text {
+    font-size: 12px;
+    font-weight: 600;
+    color: inherit;
+}
+
+/* Hide text on very small screens to keep nav compact */
+@media (max-width: 600px) {
+    .edu-text { display: none; }
+    .edu-badge { margin-left: 6px; }
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 0;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 16px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    line-height: 1.1;
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: var(--bg-modifier-hover);
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.theme-toggle {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.theme-checkbox {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-hover);
+    transition: 0.3s;
+    border-radius: 12px;
+}
+
+.theme-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--text-primary);
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.theme-checkbox:checked + .theme-slider {
+    background-color: var(--primary-blurple);
+}
+
+.theme-checkbox:checked + .theme-slider:before {
+    transform: translateX(20px);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    padding: 4px;
+}
+
+.hamburger span {
+    width: 20px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+/* Hero Section - Discord Style */
+.hero {
+    min-height: calc(100vh - 48px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 80px;
+    background: var(--bg-primary);
+    margin-top: 48px;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    line-height: 1.1;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-blurple);
+    margin-bottom: 16px;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 20px;
+    color: var(--text-secondary);
+    line-height: 1.3;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Sections */
+section {
+    padding: 40px 0;
+    background: var(--bg-primary);
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+}
+
+/* Summary Section */
+.summary {
+    background: var(--bg-primary);
+}
+
+.summary-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.summary-text {
+    font-size: 20px;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Experience Section - Discord Message Style */
+.experience {
+    background: var(--bg-secondary);
+}
+
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    background: var(--bg-primary);
+    padding: 16px;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+    border-left: 2px solid transparent;
+}
+
+.experience-item:hover {
+    background: var(--bg-modifier-hover);
+    border-left-color: var(--primary-blurple);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.exp-company {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.company-logo {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-blurple);
+    border-radius: 50%;
+    flex-shrink: 0;
+    color: white;
+    font-size: 16px;
+}
+
+/* If a real logo image is used, make it fill the circle and scale responsively */
+.company-logo img,
+.company-logo-img,
+.exp-company .company-logo img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* Ensure the image never exceeds the container even if other rules exist */
+.company-logo-img {
+    max-width: 36px;
+    max-height: 36px;
+}
+
+/* Stronger, explicit sizing to prevent any overrides — makes the logo consistently small */
+.exp-company > .company-logo > img.company-logo-img,
+.company-logo > img.company-logo-img {
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 32px !important;
+    max-height: 32px !important;
+}
+
+.company-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.exp-role {
+    font-size: 16px;
+    color: var(--primary-blurple);
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+/* Darken exp-role in light mode for better contrast */
+[data-theme="light"] .exp-role {
+    color: var(--text-primary);
+}
+
+.exp-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    text-align: right;
+}
+
+.exp-location {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.exp-date {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.exp-description {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+/* Experience note box (outside the boxed items) */
+.experience-note-box {
+    max-width: 900px;
+    margin: 16px auto 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.experience-note-box .note-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+}
+
+.experience-note-box .note-logo {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border-radius: 50%;
+    background: var(--primary-blurple);
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.experience-note-box .note-content { flex: 1; }
+
+.exp-note {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+.read-more-btn {
+    background: none;
+    border: none;
+    color: var(--primary-blurple);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    line-height: 1.1;
+}
+
+.read-more-btn:hover {
+    color: var(--light-blurple);
+    text-decoration: underline;
+}
+
+/* Projects Section */
+.projects {
+    background: var(--bg-primary);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.15s ease;
+}
+
+.project-card:hover {
+    border-color: var(--primary-blurple);
+    background: var(--bg-modifier-hover);
+}
+
+/* In light mode, add a clear black outline around project cards on hover */
+[data-theme="light"] .project-card:hover {
+    border-color: #000;
+    /* outer ring to mimic an outline without shifting layout */
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.9);
+    background: var(--bg-modifier-hover);
+}
+
+.project-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-blurple), var(--discord-fuchsia));
+    position: relative;
+    overflow: hidden;
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-link {
+    padding: 8px 16px;
+    background: var(--primary-blurple);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.15s ease;
+}
+
+.project-link:hover {
+    background: var(--primary-blurple-hover);
+}
+
+/* Light-mode readability fixes: make accent-colored text/buttons darker for contrast */
+[data-theme="light"] .project-link {
+    background: var(--primary-blurple-dark);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .btn-link,
+[data-theme="light"] .read-more-btn,
+[data-theme="light"] .back-link,
+[data-theme="light"] .project-detail-category,
+[data-theme="light"] .hero-subtitle,
+[data-theme="light"] .exp-role {
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .company-logo {
+    background: var(--primary-blurple-dark);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .project-image {
+    /* keep the image accent but slightly darker so overlay/buttons remain visible */
+    background: linear-gradient(135deg, var(--primary-blurple-dark), var(--discord-fuchsia));
+}
+
+.project-content {
+    padding: 16px;
+}
+
+.project-content h3 {
+    font-size: 22px;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.project-category {
+    font-size: 16px;
+    color: var(--text-muted);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.projects-link {
+    text-align: center;
+}
+
+.btn-link {
+    color: var(--primary-blurple);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.15s ease;
+    line-height: 1.1;
+}
+
+.btn-link:hover {
+    color: var(--light-blurple);
+    text-decoration: underline;
+}
+
+/* Contact Section */
+.contact {
+    background: var(--bg-secondary);
+    padding: 40px 0;
+}
+
+.contact-content {
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.contact-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    transition: all 0.15s ease;
+    line-height: 1.1;
+}
+
+.contact-link:hover {
+    background: var(--bg-modifier-hover);
+    border-color: var(--primary-blurple);
+    color: var(--primary-blurple);
+}
+
+/* Footer */
+.footer {
+    background: var(--bg-tertiary);
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    padding: 24px 0;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* Project Detail Page */
+.project-detail {
+    padding: 80px 20px 40px;
+    background: var(--bg-primary);
+    margin-top: 48px;
+}
+
+.back-link {
+    color: var(--primary-blurple);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 16px;
+    transition: color 0.15s ease;
+}
+
+.back-link:hover {
+    color: var(--light-blurple);
+    text-decoration: underline;
+}
+
+.project-detail-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.project-detail-category {
+    font-size: 20px;
+    color: var(--primary-blurple);
+    margin-bottom: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.project-detail-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-detail-image {
+    margin-bottom: 24px;
+}
+
+.image-placeholder {
+    width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+/* Make images scale naturally and let the container fit around them */
+.image-placeholder img,
+.detail-image-placeholder img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+/* Make embedded project videos responsive and match image styling */
+.project-detail-main-video,
+.image-placeholder video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+
+/* Detail placeholder videos (thumbnails) should behave like images */
+.detail-image-placeholder video,
+.detail-thumb-video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 0 auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Constrain the visible size of the main project video so it doesn't dominate the layout
+   Users can still use the native fullscreen control to expand it */
+.project-detail-main-video {
+    max-width: 640px; /* change this value if you want a different visible size */
+    width: 100%;
+    height: auto;
+}
+
+/* Make detail thumbnail videos a bit smaller */
+.detail-thumb-video {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 720px) {
+    .project-detail-main-video,
+    .detail-thumb-video {
+        max-width: 100%;
+    }
+}
+
+.project-detail-info h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    line-height: 1.1;
+}
+
+.project-detail-info p {
+    font-size: 20px;
+    line-height: 1.2;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.project-detail-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 16px;
+}
+
+.project-detail-info li {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.2;
+}
+
+.project-detail-info li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-blurple);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.tech-tag {
+    padding: 4px 12px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.project-detail-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.project-detail-images > .detail-image-placeholder {
+    align-self: start;
+}
+
+.detail-image-placeholder {
+    width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Lightbox / zoom overlay */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 200ms ease;
+    z-index: 2000;
+}
+.lightbox-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+.lightbox-overlay img {
+    max-width: 92%;
+    max-height: 92%;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    cursor: zoom-out;
+}
+.lightbox-overlay .close-hint {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Zoom cursor for clickable images */
+.zoomable {
+    cursor: zoom-in;
+}
+.lightbox-overlay img {
+    cursor: zoom-out;
+}
+
+/* Projects Page */
+.projects-page {
+    padding: 80px 20px 40px;
+    background: var(--bg-primary);
+    min-height: calc(100vh - 48px);
+    margin-top: 48px;
+}
+
+.page-title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.1;
+}
+
+.page-subtitle {
+    font-size: 20px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.project-description {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    line-height: 1.2;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .hero-title {
+        font-size: 24px;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .exp-header {
+        flex-direction: column;
+    }
+    
+    .exp-details {
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .project-detail-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 48px;
+        flex-direction: column;
+        background: var(--bg-secondary);
+        width: 100%;
+        text-align: left;
+        transition: left 0.3s ease;
+        border-top: 1px solid var(--border-color);
+        padding: 8px 0;
+        gap: 0;
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 0;
+        height: auto;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .hero-title {
+        font-size: 20px;
+    }
+    
+    .section-title {
+        font-size: 18px;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .nav-controls {
+        gap: 8px;
+    }
+}

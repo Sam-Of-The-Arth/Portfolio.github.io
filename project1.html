@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadruped Robotics Platform - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'gg sans';
+            src: local('Helvetica Neue'), local('Arial');
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+            <ul class="nav-menu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <label class="theme-toggle">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <span class="theme-slider"></span>
+                </label>
+            </div>
+        </div>
+    </nav>
+
+    <section class="project-detail">
+        <div class="container">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+            <h1 class="project-detail-title">Quadruped Robotics Platform</h1>
+            <p class="project-detail-category">Robotics & Embedded Systems</p>
+            
+            <div class="project-detail-content">
+                <div class="project-detail-image">
+                        <!-- Main project image: replace the src with your main project photo path -->
+                        <div class="image-placeholder">
+                            <img src="assets/project1-main.jpg" alt="Robot Dog Prototype - main" class="project-detail-main-img zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.75rem;">Replace `assets/project1-main.jpg` with your main project photo path.</p>
+                        </div>
+                    </div>
+
+                <div class="project-detail-info">
+                    <h2>Overview</h2>
+                    <p>
+                        A custom-built quadruped robot designed to explore gait control, embedded actuation, and real-time motion coordination. 
+                        The platform features independently actuated legs, programmable walking modes, and a lightweight structural frame 
+                        optimized for stability and balance.
+                    </p>
+
+                    <h2>Key Features</h2>
+                    <ul>
+                        <li>Four-leg locomotion with independent servo actuation</li>
+                        <li>Programmable walking, trotting, and turning motions</li>
+                        <li>Onboard microcontroller for real-time motion control</li>
+                        <li>Structural frame designed for weight balance and rigidity</li>
+                        <li>Adjustable gait parameters for experimentation</li>
+                        <li>Modular design allowing upgrades and additional sensors</li>
+                        <li>Wireless control support (Bluetooth / custom remote)</li>
+                    </ul>
+
+                    <h2>Technologies / Components Used</h2>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Arduino / ESP32</span>
+                        <span class="tech-tag">High-Torque Servos</span>
+                        <span class="tech-tag">Custom Chassis</span>
+                        <span class="tech-tag">Li-ion Battery Pack</span>
+                        <span class="tech-tag">Bluetooth Module</span>
+                        <span class="tech-tag">C++ Firmware</span>
+                    </div>
+
+                    <h2>Project Details</h2>
+                    <p>
+                        This quadruped robot was created to experiment with legged locomotion and embedded control systems. 
+                        The chassis was designed for balanced weight distribution and rigidity. 
+                        Each leg uses multiple servos to replicate hip and knee joints, allowing controlled multi-axis motion.
+                        The firmware manages servo timing, gait cycles, and movement transitions using custom control algorithms. 
+                        Additional focus was placed on structural strength, cable management, and creating a platform that can be expanded 
+                        with sensors such as IMUs, distance modules, or cameras.
+                    </p>
+
+                    <div class="project-detail-images">
+                        <div class="detail-image-placeholder">
+                            <img src="assets/project1-chassis.jpg" alt="Chassis & Frame Design" class="zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;">Chassis & Frame Design — replace `assets/project1-chassis.jpg`</p>
+                        </div>
+                        <div class="detail-image-placeholder">
+                            <img src="assets/project1-electronics.jpg" alt="Electronics & Wiring" class="zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;">Electronics & Wiring — replace `assets/project1-electronics.jpg`</p>
+                        </div>
+                        <div class="detail-image-placeholder">
+                            <img src="assets/project1-motion.jpg" alt="Motion Testing" class="zoomable" style="max-width:100%; height:auto; display:block;">
+                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;">Motion Testing — replace `assets/project1-motion.jpg`</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Samarth Aradhya</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

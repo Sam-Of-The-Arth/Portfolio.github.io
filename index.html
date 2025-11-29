@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'gg sans';
+            src: local('Helvetica Neue'), local('Arial');
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="site-name">Portfolio</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="resume.html" class="nav-link">Resume</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <label class="theme-toggle">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <span class="theme-slider"></span>
+                </label>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Samarth Aradhya</h1>
+                <p class="hero-subtitle">Portfolio</p>
+                <p class="hero-description">
+                    Thanks for checking out my portfolio! Whether you're a recruiter, fellow engineer, friend, or lost stranger, I hope you enjoy the ride.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section id="about" class="summary">
+        <div class="container">
+            <h2 class="section-title">Summary</h2>
+            <div class="summary-content">
+                <p class="summary-text">
+                    I'm a dedicated engineer with a passion for solving complex problems and building 
+                    innovative solutions. With expertise in software development, system design, and 
+                    engineering principles, I bring technical excellence to every project.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="resume" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-list">
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div class="exp-company">
+                            <div class="company-logo">
+                                <img src="assets/code-ninjas-logo.png" alt="Code Ninjas logo" class="company-logo-img">
+                            </div>
+                            <div class="company-info">
+                                <h3>Code Ninjas Tutor</h3>
+                                <p class="exp-role">Tutor</p>
+                            </div>
+                        </div>
+                        <div class="exp-details">
+                            <span class="exp-location">San Ramon, CA</span>
+                            <span class="exp-date">May 2022 - March 2025</span>
+                        </div>
+                    </div>
+                    <p class="exp-description">Taught students foundational programming in JavaScript, Python, and Robotics, guiding students through debugging and project development. Initiated and led a 3D Printing and Modeling camp introducing students to CAD and physical prototyping.</p>
+                    <a href="experience-code-ninjas.html" class="read-more-btn" style="display:inline-block; margin-top:8px;">Read More</a>
+                </div>
+            </div>
+            <!-- Experience helper / recruiter note box (outside boxed items) -->
+            <div class="experience-note-box">
+                <div class="note-inner">
+                    <div class="note-content">
+                        <p class="exp-note"><strong>Recruiter note:</strong> Feel free to browse my experience section. It’s a work in progress… though I wouldn’t mind your help expanding it.😉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/project1.jpg'); background-size: cover; background-position: center;">
+                        <div class="project-overlay">
+                            <a href="project1.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Autonomous Quadruped Robot</h3>
+                        <p class="project-category">Robotics</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/20251125_214021(1).jpg'); background-size: cover; background-position: center;">
+                        <div class="project-overlay">
+                            <a href="project2.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Six-Legged Robot Platform</h3>
+                        <p class="project-category">Robotics</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/Gauntlet.jpg'); background-size: cover; background-position: center;">
+                        <div class="project-overlay">
+                            <a href="project3.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Gesture Input Glove</h3>
+                        <p class="project-category">Human-Machine Interfaces</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('assets/Engines.jpg'); background-size: cover; background-position: center;">
+                        <div class="project-overlay">
+                            <a href="project4.html" class="project-link">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Game Development</h3>
+                        <p class="project-category">Interactive Software Engineering</p>
+                    </div>
+                </div>
+            </div>
+            <div class="projects-link">
+                <a href="projects.html" class="btn-link">View All Projects →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-links">
+                    <a href="resume.html" class="contact-link">Resume</a>
+                    <a href="https://linkedin.com/in/samarth-aradhya" class="contact-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:samartharadhyaportfolio@gmail.com" class="contact-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Samarth Aradhya</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
