@@ -1116,3 +1116,14 @@ section {
         gap: 8px;
     }
 }
+
+.nav-link i, .contact-link i {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+/* Optional: Make the GitHub icon grow slightly on hover */
+.contact-link:hover i {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}

@@ -1,3 +1,6 @@
+
+import { Analytics } from "@vercel/analytics/next"
+
 // Dark Mode Toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 const html = document.documentElement;
