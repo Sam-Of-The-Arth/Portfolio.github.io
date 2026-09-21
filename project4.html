@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Development - Portfolio</title>
+    <title>Game Development — Samarth Aradhya</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        @font-face { font-family: 'gg sans'; src: local('Helvetica Neue'), local('Arial'); }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+            <div class="logo">
+                <a href="index.html">SAMARTH ARADHYA</a>
+                <a href="https://www.purdue.edu" class="edu-badge" target="_blank" rel="noopener noreferrer" aria-label="Purdue University">
+                    <img src="assets/Purdue-removebg-preview.png" alt="Purdue Logo" class="edu-logo">
+                    <span class="edu-text">Purdue University</span>
+                </a>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="projects.html" class="nav-link"><span class="idx">01.</span>Work</a></li>
+                <li><a href="index.html#experience" class="nav-link"><span class="idx">02.</span>Experience</a></li>
+                <li><a href="index.html#about" class="nav-link"><span class="idx">03.</span>About</a></li>
+                <li><a href="resume.html" class="nav-resume">Resume (PDF)</a></li>
             </ul>
             <div class="nav-controls">
                 <label class="theme-toggle">
-                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox" aria-label="Toggle light and dark theme">
                     <span class="theme-slider"></span>
                 </label>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -36,23 +42,26 @@
     <section class="project-detail">
         <div class="container">
             <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="detail-eyebrow">
+                <span class="case-index mono">PROJECT_04</span>
+                <span class="case-tag cyan">Interactive Software</span>
+            </div>
             <h1 class="project-detail-title">Game Development Projects</h1>
-            <p class="project-detail-category">Software & Interactive Systems</p>
+            <p class="project-detail-category">Software &amp; Interactive Systems</p>
 
             <div class="project-detail-content">
-
-                <div class="project-detail-image">
-                    <!-- Main project video: replace the src/poster with your video path and poster image -->
+                <div class="project-detail-image reveal">
                     <div class="image-placeholder">
                         <video controls class="project-detail-main-video" poster="assets/Screenshot 2025-11-26 005125.png">
-                            <source src="assets/The Eleventh Demo - Demo - Windows, Mac, Linux - Unity 6.1 (6000.1.9f1) _DX12_ 2025-11-26 00-46-58.mp4" type="video/mp4"><p>Test </p>
+                            <source src="assets/The Eleventh Demo - Demo - Windows, Mac, Linux - Unity 6.1 (6000.1.9f1) _DX12_ 2025-11-26 00-46-58.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p style="font-size:.9rem; color:var(--text-secondary); margin-top:0.75rem;"> Custom Built NPC and Traffic AI including streetlights and intersections</p>
+                        <p style="font-size:.9rem; color:var(--text-secondary); margin-top:0.75rem;">Custom-built NPC and traffic AI, including streetlights and intersections.</p>
                     </div>
                 </div>
 
-                <div class="project-detail-info">
+                <div class="project-detail-info reveal">
                     <h2>Overview</h2>
                     <p>
                         A collection of systems and prototypes built across multiple engines,
@@ -65,9 +74,9 @@
                         <li>Chunk-based procedural world generation</li>
                         <li>RNG-driven reward and ability systems</li>
                         <li>Local and online multiplayer lobbies</li>
-                        <li>Physics-based combat & movement systems</li>
+                        <li>Physics-based combat &amp; movement systems</li>
                         <li>UI/UX features such as menus and effects</li>
-                        <li>Fully Self Developed NPC and Vehicle Traffic systems</li>
+                        <li>Fully self-developed NPC and vehicle traffic systems</li>
                     </ul>
 
                     <h2>Technologies Used</h2>
@@ -77,31 +86,29 @@
                         <span class="tech-tag">Phaser</span>
                         <span class="tech-tag">JavaScript</span>
                         <span class="tech-tag">Supabase</span>
-                        <span class="tech-tag">C# (unity-style prototypes)</span>
+                        <span class="tech-tag">C# (Unity-style prototypes)</span>
                     </div>
 
                     <h2>Project Details</h2>
                     <p>
-                        These projects emphasize system design, technical implementation, and rapid prototyping.
-                        You built everything from procedural terrain to physics systems and multiplayer lobbies
-                        using real-time data sync via Supabase.
+                        These projects emphasize system design, technical implementation, and rapid prototyping —
+                        from procedural terrain to physics systems and multiplayer lobbies with real-time data sync via Supabase.
                     </p>
 
-                    <div class="project-detail-images">
-                        <div class="detail-image-placeholder">
-                            <img src="assets/Screenshot 2025-11-26 010425.png" alt="Procedural World" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;">Platform Fighter Game - Line Wars</p>
+                    <div class="project-detail-images reveal-stagger">
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/Screenshot 2025-11-26 010425.png" alt="Platform Fighter Game - Line Wars" class="zoomable">
+                            <p class="img-caption">Platform Fighter Game - Line Wars</p>
                         </div>
-                        <div class="detail-image-placeholder">
-                            <img src="assets/Screenshot 2025-12-04 161247.png" alt="Procedural World" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/Screenshot 2025-12-04 161247.png" alt="Procedural World" class="zoomable">
+                            <p class="img-caption">Procedural World</p>
                         </div>
-                        <div class="detail-image-placeholder">
-                            <img src="assets/Screenshot 2025-12-04 162158.png" alt="Physics Prototype" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/Screenshot 2025-12-04 162158.png" alt="Physics Prototype" class="zoomable">
+                            <p class="img-caption">Physics Prototype</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -109,7 +116,18 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Samarth Aradhya</p>
+            <div class="footer-grid">
+                <div class="footer-brand"><strong>SAMARTH ARADHYA</strong></div>
+                <div class="footer-links">
+                    <a href="mailto:samartharadhyaportfolio@gmail.com" class="footer-link">Email</a>
+                    <a href="https://github.com/sam-of-the-arth" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/samarth-aradhya" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="resume.html" class="footer-link">Resume</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span>&copy; 2025 Samarth Aradhya</span>
+            </div>
         </div>
     </footer>
 

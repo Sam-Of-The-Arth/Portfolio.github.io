@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom MacroPad - Portfolio</title>
+    <title>Custom MacroPad — Samarth Aradhya</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'gg sans';
-            src: local('Helvetica Neue'), local('Arial');
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+            <div class="logo">
+                <a href="index.html">SAMARTH ARADHYA</a>
+                <a href="https://www.purdue.edu" class="edu-badge" target="_blank" rel="noopener noreferrer" aria-label="Purdue University">
+                    <img src="assets/Purdue-removebg-preview.png" alt="Purdue Logo" class="edu-logo">
+                    <span class="edu-text">Purdue University</span>
+                </a>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="projects.html" class="nav-link"><span class="idx">01.</span>Work</a></li>
+                <li><a href="index.html#experience" class="nav-link"><span class="idx">02.</span>Experience</a></li>
+                <li><a href="index.html#about" class="nav-link"><span class="idx">03.</span>About</a></li>
+                <li><a href="resume.html" class="nav-resume">Resume (PDF)</a></li>
             </ul>
             <div class="nav-controls">
                 <label class="theme-toggle">
-                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox" aria-label="Toggle light and dark theme">
                     <span class="theme-slider"></span>
                 </label>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -38,23 +42,27 @@
     <section class="project-detail">
         <div class="container">
             <a href="projects.html" class="back-link">← Back to Projects</a>
-            <h1 class="project-detail-title">Custom MacroPad</h1>
-            <p class="project-detail-category">Embedded Systems & Hardware Design</p>
-            
-            <div class="project-detail-content">
-                <div class="project-detail-image">
-                        <!-- Main project image: replace the src with your main project photo path -->
-                        <div class="image-placeholder">
-                            <img src="assets/Screenshot 2026-08-17 231724.png" alt="MacroPad PCB Prototype - main" class="project-detail-main-img zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.75rem;"></p>
-                        </div>
-                    </div>
 
-                <div class="project-detail-info">
+            <div class="detail-eyebrow">
+                <span class="case-index mono">PROJECT_07</span>
+                <span class="case-tag">Hardware / PCB</span>
+            </div>
+            <h1 class="project-detail-title">Custom MacroPad</h1>
+            <p class="project-detail-category">Embedded Systems &amp; Hardware Design</p>
+
+            <div class="project-detail-content">
+                <div class="project-detail-image reveal">
+                    <div class="image-placeholder">
+                        <img src="assets/Screenshot 2026-08-17 231724.png" alt="MacroPad PCB Prototype - main" class="project-detail-main-img zoomable">
+                        <p class="img-caption">MacroPad PCB Prototype</p>
+                    </div>
+                </div>
+
+                <div class="project-detail-info reveal">
                     <h2>Overview</h2>
                     <p>
-                        A custom-designed programmable mechanical macropad engineered from schematic to final assembly. 
-                        The device features a custom PCB layout, hot-swappable mechanical key switches, onboard microcontroller 
+                        A custom-designed programmable mechanical macropad engineered from schematic to final assembly.
+                        The device features a custom PCB layout, hot-swappable mechanical key switches, onboard microcontroller
                         integration, and a dedicated 3D-printed enclosure designed for ergonomic desktop workflow efficiency.
                     </p>
 
@@ -81,25 +89,25 @@
 
                     <h2>Project Details</h2>
                     <p>
-                        This macropad was developed to streamline digital workflows and explore end-to-end hardware engineering. 
-                        The hardware design process began with schematic capture and PCB routing in KiCad, integrating the microcontroller, 
-                        matrix diodes, and switch sockets. The structural enclosure was 3D modeled to ensure precise tolerances for switch plate 
-                        mounting, component clearance, and ergonomics. Firmware was configured to handle key matrix scanning, debouncing, 
+                        This macropad was developed to streamline digital workflows and explore end-to-end hardware engineering.
+                        The hardware design process began with schematic capture and PCB routing in KiCad, integrating the microcontroller,
+                        matrix diodes, and switch sockets. The structural enclosure was 3D modeled to ensure precise tolerances for switch plate
+                        mounting, component clearance, and ergonomics. Firmware was configured to handle key matrix scanning, debouncing,
                         and custom shortcut layer assignment over USB HID.
                     </p>
 
-                    <div class="project-detail-images">
-                        <div class="detail-image-placeholder">
-                            <img src="assets/Screenshot 2026-08-17 231755.png" alt="PCB Layout & Routing" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                    <div class="project-detail-images reveal-stagger">
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/Screenshot 2026-08-17 231755.png" alt="PCB Layout & Routing" class="zoomable">
+                            <p class="img-caption">PCB Layout & Routing</p>
                         </div>
-                        <div class="detail-image-placeholder">
-                            <img src="assets/Screenshot 2026-08-17 232345.png" alt="3D Enclosure CAD Design" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/Screenshot 2026-08-17 232345.png" alt="3D Enclosure CAD Design" class="zoomable">
+                            <p class="img-caption">3D Enclosure CAD Design</p>
                         </div>
-                        <div class="detail-image-placeholder">
-                            <img src="assets/20260817_201058.jpg" alt="Assembled Board & Soldering" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/20260817_201058.jpg" alt="Assembled Board & Soldering" class="zoomable">
+                            <p class="img-caption">Assembled Board & Soldering</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +117,18 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Samarth Aradhya</p>
+            <div class="footer-grid">
+                <div class="footer-brand"><strong>SAMARTH ARADHYA</strong></div>
+                <div class="footer-links">
+                    <a href="mailto:samartharadhyaportfolio@gmail.com" class="footer-link">Email</a>
+                    <a href="https://github.com/sam-of-the-arth" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/samarth-aradhya" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="resume.html" class="footer-link">Resume</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span>&copy; 2025 Samarth Aradhya</span>
+            </div>
         </div>
     </footer>
 

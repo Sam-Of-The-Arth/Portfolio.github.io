@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motion Tracking Glove - Portfolio</title>
+    <title>Motion Tracking Glove — Samarth Aradhya</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        @font-face { font-family: 'gg sans'; src: local('Helvetica Neue'), local('Arial'); }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+            <div class="logo">
+                <a href="index.html">SAMARTH ARADHYA</a>
+                <a href="https://www.purdue.edu" class="edu-badge" target="_blank" rel="noopener noreferrer" aria-label="Purdue University">
+                    <img src="assets/Purdue-removebg-preview.png" alt="Purdue Logo" class="edu-logo">
+                    <span class="edu-text">Purdue University</span>
+                </a>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="projects.html" class="nav-link"><span class="idx">01.</span>Work</a></li>
+                <li><a href="index.html#experience" class="nav-link"><span class="idx">02.</span>Experience</a></li>
+                <li><a href="index.html#about" class="nav-link"><span class="idx">03.</span>About</a></li>
+                <li><a href="resume.html" class="nav-resume">Resume (PDF)</a></li>
             </ul>
             <div class="nav-controls">
                 <label class="theme-toggle">
-                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox" aria-label="Toggle light and dark theme">
                     <span class="theme-slider"></span>
                 </label>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -36,13 +42,16 @@
     <section class="project-detail">
         <div class="container">
             <a href="projects.html" class="back-link">← Back to Projects</a>
+
+            <div class="detail-eyebrow">
+                <span class="case-index mono">PROJECT_03</span>
+                <span class="case-tag cyan">Human-Machine Interface</span>
+            </div>
             <h1 class="project-detail-title">Motion Tracking Glove</h1>
             <p class="project-detail-category">Hardware Interface</p>
 
             <div class="project-detail-content">
-
-                <div class="project-detail-image">
-                    <!-- Main project video: replace the src/poster paths with your files -->
+                <div class="project-detail-image reveal">
                     <div class="image-placeholder">
                         <video
                             class="project-detail-main-video zoomable"
@@ -53,14 +62,12 @@
                             preload="metadata"
                         >
                             <source src="assets/gauntlet.mp4" type="video/mp4">
-                            <!-- Fallback image if the video can't play -->
-                            <img src="assets/project3-main.jpg" alt="Motion Tracking Glove - main" style="max-width:100%; height:auto; display:block;">
+                            <img src="assets/project3-main.jpg" alt="Motion Tracking Glove - main">
                         </video>
-                        <p style="font-size:.9rem; color:var(--text-secondary); margin-top:0.75rem;">
                     </div>
                 </div>
 
-                <div class="project-detail-info">
+                <div class="project-detail-info reveal">
                     <h2>Overview</h2>
                     <p>
                         A wearable glove capable of detecting finger motion and transmitting real-time gesture data.
@@ -88,26 +95,25 @@
 
                     <h2>Project Details</h2>
                     <p>
-                        The glove’s firmware includes calibration, filtering, debouncing, and gesture mapping. 
+                        The glove's firmware includes calibration, filtering, debouncing, and gesture mapping.
                         It supports smooth control input suitable for robotics, games, and interactive systems.
                         Sensitivity was tuned so only full bends register as gestures.
                     </p>
 
-                    <div class="project-detail-images">
-                        <div class="detail-image-placeholder">
-                            <img src="assets/Gauntlet.jpg" alt="Sensor Layout" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                    <div class="project-detail-images reveal-stagger">
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/Gauntlet.jpg" alt="Sensor Layout" class="zoomable">
+                            <p class="img-caption">Sensor Layout</p>
                         </div>
-                        <div class="detail-image-placeholder">
-                            <img src="assets/circuit_image (1).png" alt="Firmware Diagram" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/circuit_image (1).png" alt="Firmware Diagram" class="zoomable">
+                            <p class="img-caption">Firmware Diagram</p>
                         </div>
-                        <div class="detail-image-placeholder">
-                            <img src="assets\gauntlet (1).jpg" alt="Gesture Mapping" class="zoomable" style="max-width:100%; height:auto; display:block;">
-                            <p style="margin-top:8px; color:var(--text-secondary); font-size:0.95rem;"></p>
+                        <div class="detail-image-placeholder reveal">
+                            <img src="assets/gauntlet (1).jpg" alt="Gesture Mapping" class="zoomable">
+                            <p class="img-caption">Gesture Mapping</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -115,7 +121,18 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Samarth Aradhya</p>
+            <div class="footer-grid">
+                <div class="footer-brand"><strong>SAMARTH ARADHYA</strong></div>
+                <div class="footer-links">
+                    <a href="mailto:samartharadhyaportfolio@gmail.com" class="footer-link">Email</a>
+                    <a href="https://github.com/sam-of-the-arth" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/samarth-aradhya" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="resume.html" class="footer-link">Resume</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span>&copy; 2025 Samarth Aradhya</span>
+            </div>
         </div>
     </footer>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>6th Finger Prototype — Samarth Aradhya</title>
+    <title>Lexus SC300 Widebody Bodykit &amp; Aero Testing — Samarth Aradhya</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,71 +44,69 @@
             <a href="projects.html" class="back-link">← Back to Projects</a>
 
             <div class="detail-eyebrow">
-                <span class="case-index mono">PROJECT_06</span>
-                <span class="case-tag">Robotics</span>
+                <span class="case-index mono">PROJECT_08</span>
+                <span class="case-tag">Automotive / Aero</span>
             </div>
-            <h1 class="project-detail-title">6th Finger Prototype</h1>
-            <p class="project-detail-category">Hardware Interface</p>
+            <h1 class="project-detail-title">Lexus SC300 Widebody Bodykit &amp; Aero Testing</h1>
+            <p class="project-detail-category">Automotive Design &amp; Aerodynamics — In Progress</p>
 
             <div class="project-detail-content">
                 <div class="project-detail-image reveal">
                     <div class="image-placeholder">
-                        <video
-                            class="project-detail-main-video zoomable"
-                            controls
-                            playsinline
-                            muted
-                            poster="assets/20260419_014837.jpg"
-                            preload="metadata"
-                        >
-                            <source src="assets/20260419_014837.mp4" type="video/mp4">
-                            <img src="assets/project6-main.jpg" alt="6th Finger Prototype - main">
-                        </video>
+                        <img src="assets/lexus-sc300-aero-cfd.png" alt="CFD airflow simulation render of the redesigned Lexus SC300 bodykit" class="project-detail-main-img zoomable">
+                        <p class="img-caption">Streamline CFD pass on the redesigned body — checking that the widebody and diffuser actually clean up airflow instead of just looking fast.</p>
                     </div>
                 </div>
 
                 <div class="project-detail-info reveal">
                     <h2>Overview</h2>
                     <p>
-                        A wearable robotic "6th finger" prototype designed to augment hand capabilities by translating user inputs into mechanical motion.
-                        Developed in a high-intensity, 48-hour hackathon environment, the project integrates custom firmware with physical prototyping to deliver responsive, real-time motor control.
+                        A full widebody kit for a Lexus SC300 — custom front bumper, custom hood, widened fenders, rear diffuser, and a ducktail wing —
+                        modeled in Blender and validated with a CFD simulation I built myself rather than trusting the shapes to look right and hoping
+                        for the best. The goal is a kit that's functional, not just styled: every panel gets checked against the stock car's airflow
+                        before it's treated as finished.
                     </p>
 
                     <h2>Key Features</h2>
                     <ul>
-                        <li>Dual-direction mechanical actuation via servos</li>
-                        <li>3D-printed articulated joints optimized for ergonomic wear</li>
-                        <li>Custom firmware-tuned responsive control loops</li>
-                        <li>Integrated signal debouncing to eliminate mechanical noise</li>
-                        <li>Real-time threshold mapping for precise finger activation</li>
-                        <li>Rapid hardware integration using breadboard prototyping and custom soldering</li>
+                        <li>Custom front bumper redesigned around airflow into the radiator and toward the underbody</li>
+                        <li>Custom hood profile integrated with the new front-end bodywork</li>
+                        <li>Widebody fender flares for a wider stance and larger tire fitment</li>
+                        <li>Rear diffuser for underbody airflow management</li>
+                        <li>Ducktail wing for added rear-end stability</li>
+                        <li>Full 3D model of both the stock and redesigned car for direct before/after comparison</li>
+                        <li>Custom-built CFD simulation (not an off-the-shelf package) to test the kit's actual aerodynamic effect</li>
                     </ul>
 
-                    <h2>Technologies Used</h2>
+                    <h2>Technologies / Tools Used</h2>
                     <div class="tech-tags">
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">ESP32</span>
-                        <span class="tech-tag">Servo Control</span>
-                        <span class="tech-tag">Arduino IDE</span>
-                        <span class="tech-tag">3D Printing</span>
-                        <span class="tech-tag">Hardware Prototyping</span>
+                        <span class="tech-tag">Blender</span>
+                        <span class="tech-tag">Custom CFD Simulation</span>
+                        <span class="tech-tag">Aerodynamics</span>
+                        <span class="tech-tag">Automotive Design</span>
+                        <span class="tech-tag">Surfacing / Body Modeling</span>
                     </div>
 
                     <h2>Project Details</h2>
                     <p>
-                        Built collaboratively under the team name "The Three Musketeers" at StarkHacks, this project involved both hardware assembly and low-level firmware development.
-                        The control software utilizes calibrated activation thresholds and software debouncing to convert raw inputs into stable servo movements, mitigating the erratic jitter common in rapid hardware prototyping.
-                        The physical structure relies on custom-designed 3D-printed joints and link mechanisms powered by an ESP32 microcontroller.
+                        I modeled both the stock SC300 and the redesigned widebody version in Blender so I'd have a direct baseline to test against,
+                        rather than only ever simulating the new design in isolation. The aero testing runs on a CFD pipeline I wrote myself, which
+                        streams airflow across both models so I can actually compare how the front bumper, hood, widebody, diffuser, and wing change
+                        the car's airflow instead of guessing from how the panels look.
+                    </p>
+                    <p>
+                        This is still an active project — the bodykit design and the CFD tooling are both being refined as I go, and I'm adding more
+                        renders and test passes as they're done.
                     </p>
 
                     <div class="project-detail-images reveal-stagger">
                         <div class="detail-image-placeholder reveal">
-                            <img src="assets/20260417_235706.jpg" alt="Sensor Layout" class="zoomable">
-                            <p class="img-caption">Sensor Layout</p>
+                            <img src="assets/lexus-sc300-blender-front-compare.png" alt="Blender comparison, front view: redesigned hood and bumper vs. stock SC300" class="zoomable">
+                            <p class="img-caption">Front comparison — redesigned hood and front bumper (left) vs. stock SC300 (right).</p>
                         </div>
                         <div class="detail-image-placeholder reveal">
-                            <img src="assets/20260419_012217.jpg" alt="Firmware Diagram" class="zoomable">
-                            <p class="img-caption">Firmware Diagram</p>
+                            <img src="assets/lexus-sc300-blender-rear-compare.png" alt="Blender comparison, rear view: stock SC300 vs. redesigned widebody with diffuser and wing" class="zoomable">
+                            <p class="img-caption">Rear comparison — stock SC300 (left) vs. the widebody, diffuser, and ducktail wing (right).</p>
                         </div>
                     </div>
                 </div>

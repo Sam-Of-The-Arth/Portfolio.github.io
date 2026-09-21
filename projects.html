@@ -1,134 +1,238 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Portfolio</title>
+    <title>Projects — Samarth Aradhya</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        @font-face {
-            font-family: 'gg sans';
-            src: local('Helvetica Neue'), local('Arial');
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Portfolio</a></div>
+            <div class="logo">
+                <a href="index.html">SAMARTH ARADHYA</a>
+                <a href="https://www.purdue.edu" class="edu-badge" target="_blank" rel="noopener noreferrer" aria-label="Purdue University">
+                    <img src="assets/Purdue-removebg-preview.png" alt="Purdue Logo" class="edu-logo">
+                    <span class="edu-text">Purdue University</span>
+                </a>
+            </div>
             <ul class="nav-menu">
-                <li><a href="index.html#home" class="nav-link">Home</a></li>
-                <li><a href="resume.html" class="nav-link">Resume</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="index.html#about" class="nav-link">About</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html#work" class="nav-link active"><span class="idx">01.</span>Work</a></li>
+                <li><a href="index.html#experience" class="nav-link"><span class="idx">02.</span>Experience</a></li>
+                <li><a href="index.html#about" class="nav-link"><span class="idx">03.</span>About</a></li>
+                <li><a href="resume.html" class="nav-resume">Resume (PDF)</a></li>
             </ul>
             <div class="nav-controls">
                 <label class="theme-toggle">
-                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox">
+                    <input type="checkbox" id="darkModeToggle" class="theme-checkbox" aria-label="Toggle light and dark theme">
                     <span class="theme-slider"></span>
                 </label>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <section class="projects-page">
+    <section class="section" style="padding-bottom: 40px;">
         <div class="container">
-            <h1 class="page-title">Projects</h1>
-            <p class="page-subtitle">A collection of my recent work and projects</p>
-            
-<div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/20251124_221435.jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project1.html" class="project-link">View Project</a>
+            <span class="overline reveal">All Builds</span>
+            <h1 class="page-title reveal">Projects</h1>
+            <p class="page-subtitle reveal">Eight builds spanning legged robotics, embedded hardware, custom PCBs, automotive aerodynamics, and interactive software.</p>
+
+            <div class="work-grid reveal-stagger">
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_01</span>
+                        <span class="case-tag">Robotics</span>
+                    </div>
+                    <a href="project1.html" class="case-media" aria-label="View Autonomous Quadruped Robot">
+                        <img src="assets/20251124_221435.jpg" alt="Quadruped robot prototype" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Autonomous Quadruped Robot</h3>
+                        <p class="case-problem">Four-leg locomotion platform with independently actuated servo joints and onboard microcontroller gait control.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">ESP32 / Arduino</span>
+                            <span class="spec-pill">Servos</span>
+                            <span class="spec-pill">C++ Firmware</span>
+                            <span class="spec-pill">Bluetooth</span>
                         </div>
+                        <a href="project1.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>Autonomous Quadruped Robot</h3>
-                        <p class="project-category">Robotics</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_02</span>
+                        <span class="case-tag">Robotics</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/20251125_214021(1).jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project2.html" class="project-link">View Project</a>
+                    <a href="project2.html" class="case-media" aria-label="View Six-Legged Robot Platform">
+                        <img src="assets/20251125_214021(1).jpg" alt="Six-legged spider robot prototype" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Six-Legged Robot Platform</h3>
+                        <p class="case-problem">Six-leg gait synchronization and obstacle-reactive movement on a custom lightweight chassis.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">ESP32 / Arduino</span>
+                            <span class="spec-pill">Ultrasonic</span>
+                            <span class="spec-pill">Servo Control</span>
+                            <span class="spec-pill">C++</span>
                         </div>
+                        <a href="project2.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>Six-Legged Robot Platform</h3>
-                        <p class="project-category">Robotics</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_03</span>
+                        <span class="case-tag cyan">Human-Machine Interface</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/Gauntlet.jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project3.html" class="project-link">View Project</a>
+                    <a href="project3.html" class="case-media" aria-label="View Motion Tracking Glove">
+                        <img src="assets/Gauntlet.jpg" alt="Motion tracking glove prototype" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Motion Tracking Glove</h3>
+                        <p class="case-problem">Wearable flex-sensor glove translating finger motion into calibrated, debounced gesture data in real time.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">ESP32</span>
+                            <span class="spec-pill">Flex Sensors</span>
+                            <span class="spec-pill">C++</span>
+                            <span class="spec-pill">BLE / Serial</span>
                         </div>
+                        <a href="project3.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>Gesture Input Glove</h3>
-                        <p class="project-category">Human-Machine Interfaces</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_04</span>
+                        <span class="case-tag cyan">Interactive Software</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/Engines.jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project4.html" class="project-link">View Project</a>
+                    <a href="project4.html" class="case-media" aria-label="View Game Development Projects">
+                        <img src="assets/Engines.jpg" alt="Game development project screenshot" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Game Development</h3>
+                        <p class="case-problem">Procedural world generation, physics-driven combat, and real-time multiplayer sync across Godot, Phaser, and Unity-style prototypes.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">Godot</span>
+                            <span class="spec-pill">Phaser</span>
+                            <span class="spec-pill">Supabase</span>
+                            <span class="spec-pill">C#</span>
                         </div>
+                        <a href="project4.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>Game Development</h3>
-                        <p class="project-category">Interactive Software Engineering</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_05</span>
+                        <span class="case-tag">Fabrication</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/PXL_20250504_194647142.jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project5.html" class="project-link">View Project</a>
+                    <a href="project5.html" class="case-media" aria-label="View Eagle Scout Service Project">
+                        <img src="assets/PXL_20250504_194647142.jpg" alt="Eagle Scout service project build" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Eagle Scout Service Project</h3>
+                        <p class="case-problem">Design, material planning, and on-site build leadership for four structural farm troughs, from sketch to finished frame.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">Structural Design</span>
+                            <span class="spec-pill">Hand &amp; Power Tools</span>
+                            <span class="spec-pill">Project Mgmt</span>
                         </div>
+                        <a href="project5.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>Eagle Project</h3>
-                        <p class="project-category">Structural Build & Project management</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_06</span>
+                        <span class="case-tag">Robotics</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/20260419_014858.jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project6.html" class="project-link">View Project</a>
+                    <a href="project6.html" class="case-media" aria-label="View 6th Finger Prototype">
+                        <img src="assets/20260419_014858.jpg" alt="6th Finger wearable robotics prototype" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">6th Finger Prototype</h3>
+                        <p class="case-problem">48-hour hackathon build: a wearable servo-actuated 6th finger with tuned firmware and 3D-printed articulated joints.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">ESP32</span>
+                            <span class="spec-pill">Servo Control</span>
+                            <span class="spec-pill">3D Printing</span>
+                            <span class="spec-pill">C++</span>
                         </div>
+                        <a href="project6.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>6th Finger Prototype</h3>
-                        <p class="project-category">Robotics</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_07</span>
+                        <span class="case-tag">Hardware / PCB</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('assets/20260817_201040.jpg'); background-size: cover; background-position: center;">
-                        <div class="project-overlay">
-                            <a href="project7.html" class="project-link">View Project</a>
+                    <a href="project7.html" class="case-media" aria-label="View Custom MacroPad">
+                        <img src="assets/20260817_201040.jpg" alt="Custom macropad PCB prototype" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Custom MacroPad</h3>
+                        <p class="case-problem">End-to-end custom mechanical macropad — KiCad schematic, PCB routing, SMD assembly, and USB-HID firmware.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">KiCad / PCB</span>
+                            <span class="spec-pill">RP2040 / ESP32</span>
+                            <span class="spec-pill">QMK / C++</span>
+                            <span class="spec-pill">SMD Soldering</span>
                         </div>
+                        <a href="project7.html" class="case-link">Deep-Dive Case Study →</a>
                     </div>
-                    <div class="project-content">
-                        <h3>Custom MacroPad</h3>
-                        <p class="project-category">Hardware & PCB Design</p>
+                </article>
+
+                <article class="case-card reveal">
+                    <div class="case-bar">
+                        <span class="case-index">PROJECT_08</span>
+                        <span class="case-tag">Automotive / Aero</span>
                     </div>
-                </div>
+                    <a href="project8.html" class="case-media" aria-label="View Lexus SC300 Widebody Bodykit & Aero Testing">
+                        <img src="assets/lexus-sc300-aero-cfd.png" alt="CFD airflow simulation render of the redesigned Lexus SC300 bodykit" loading="lazy">
+                    </a>
+                    <div class="case-body">
+                        <h3 class="case-title">Lexus SC300 Widebody Bodykit &amp; Aero Testing</h3>
+                        <p class="case-problem">Custom front bumper, hood, widebody, diffuser, and ducktail wing — validated with a self-built CFD simulation instead of just styled to look fast.</p>
+                        <div class="pill-row">
+                            <span class="spec-pill">Blender</span>
+                            <span class="spec-pill">Custom CFD Sim</span>
+                            <span class="spec-pill">Aerodynamics</span>
+                            <span class="spec-pill">Automotive Design</span>
+                        </div>
+                        <a href="project8.html" class="case-link">Deep-Dive Case Study →</a>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Samarth Aradhya</p>
+            <div class="footer-grid">
+                <div class="footer-brand"><strong>SAMARTH ARADHYA</strong></div>
+                <div class="footer-links">
+                    <a href="mailto:samartharadhyaportfolio@gmail.com" class="footer-link">Email</a>
+                    <a href="https://github.com/sam-of-the-arth" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://linkedin.com/in/samarth-aradhya" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="resume.html" class="footer-link">Resume</a>
+                </div>
+            </div>
+            <div class="footer-meta">
+                <span>&copy; 2025 Samarth Aradhya</span>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
