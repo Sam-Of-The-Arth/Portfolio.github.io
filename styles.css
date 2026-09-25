@@ -866,6 +866,7 @@ html.js-reveal .reveal.is-visible { opacity: 1; transform: translateY(0); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(0, 240px));
   justify-content: center;
+  align-items: center;
   gap: 14px;
   margin-top: 20px;
 }
